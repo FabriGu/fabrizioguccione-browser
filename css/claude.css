@@ -1,0 +1,99 @@
+
+/* 2009 Google styling */
+body, td, a, p, .h {
+  font-family: arial, sans-serif;
+}
+
+input {
+  font-family: inherit;
+  height: 20px;
+}
+
+main {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 10;
+}
+
+/* Preserve your existing styling for core elements */
+html, body {
+  background-color: #FFF;
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.wrapper {
+    border: solid 1px purple;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#homeScreenNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+#title {
+  font-family: googleFont-medium;
+  font-size: 50pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#title img {
+  width: 70%;
+  padding: 5%;
+  padding-top: 0;
+  margin-top: -10%;
+}
+
+#homeScreenSearchContainer {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+    /* padding: 10px; */
+}
+
+
+
+#searchBtn, #luckyBtn {
+    /* width: 30%; */
+    align-self: center;;
+    padding: 5px;
+    margin: 5px;
+  }
+
+#homeScreenInfo {
+  margin: 20px;
+  margin-top: 50px;
+
+  text-align: center;
+}
+
+#imageSearchScreen {
+  display: none;
+}
