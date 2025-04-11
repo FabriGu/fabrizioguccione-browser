@@ -68,22 +68,6 @@
     <script src="tf-helper.js"></script>
     <script src="sketch.js"></script>
     
-    <script>
-      // Update search input with query value if it exists
-      if (qValue) {
-        document.querySelector('#searchInput').value = qValue;
-      }
-      
-      // Google 2009 time reporting script
-      (function () {
-        function a() {
-          google.timers.load.t.ol = (new Date).getTime();
-          google.report && google.timers.load.t.xjs && google.report(google.timers.load, google.kCSI);
-        }
-        if (window.addEventListener) window.addEventListener("load", a, false);
-        else if (window.attachEvent) window.attachEvent("onload", a);
-        google.timers.load.t.prt = (new Date).getTime();
-      })();
-    </script>
+   
   </body>
 </html>

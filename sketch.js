@@ -2,7 +2,7 @@
 // https://github.com/shiffman/ML-for-Creative-Coding
 
 // List of all images
-let imageList;
+// let imageList;
 
 // All image embeddings
 let imageEmbeddings = [];
@@ -28,8 +28,24 @@ async function setup() {
   background(220);
   
   // Load list of images
-  let rawjson = await loadJSON("image-catalog.json");
-  imageList = rawjson.images;
+  // let rawjson = await loadJSON("image-catalog.json");
+  // imageList = rawjson.images;
+
+
+  // Update Canvas with loading message
+  updateCanvas("Loading embeddings...");
+  
+  // Load pre-computed embeddings instead of computing them
+  try {
+    let response = await fetch("image-embeddings.json");
+    let data = await response.json();
+    imageEmbeddings = data.images;
+    updateCanvas(`Loaded ${imageEmbeddings.length} image embeddings`);
+  } catch (error) {
+    console.error("Error loading embeddings:", error);
+    updateCanvas("Error loading embeddings!");
+  }
+  
   
   // Text input
   // textInput = createInput("");
@@ -42,7 +58,7 @@ async function setup() {
 
   // Load models and compute embeddings
   await loadModels();
-  await computeEmbeddings();
+  // await computeEmbeddings();
   
   // Update Canvas
   updateCanvas("Ready!");
@@ -85,11 +101,14 @@ async function searchImages() {
   // Display results
   for (const result of similarities) {
     const resultDiv = createDiv();
+
+    resultDiv.addClass("resultDiv");
     resultDiv.style("display", "inline-block");
     resultDiv.style("margin", "10px");
     const img = createImg(result.item.url, result.item.id);
     img.parent(resultDiv);
-    img.size(100, 100);
+    img.size(200, AUTO);
+    
     const scoreP = createP(`${result.similarity.toFixed(2)}`);
     scoreP.parent(resultDiv);
     resultDiv.parent(resultsDiv);

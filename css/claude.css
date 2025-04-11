@@ -99,3 +99,9 @@ canvas {
 #imageSearchScreen {
   display: none;
 }
+
+/* 
+.resultDiv img {
+  width: 100 !important;
+  height: 200;
+} */
