@@ -17,7 +17,7 @@ main {
     z-index: 10;
 }
 
-/* Preserve your existing styling for core elements */
+
 html, body {
   background-color: #FFF;
   margin: 0;
@@ -29,7 +29,7 @@ canvas {
 }
 
 .wrapper {
-    border: solid 1px purple;
+    border: solid 0px purple;
 
   position: absolute;
   top: 0;
@@ -46,7 +46,9 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid black;
 }
 
 #title {
