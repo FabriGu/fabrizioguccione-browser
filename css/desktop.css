@@ -1,45 +1,59 @@
-html,
-body {
+
+/* 2009 Google styling */
+body, td, a, p, .h {
+  font-family: arial, sans-serif;
+}
+
+input {
+  font-family: inherit;
+  height: 20px;
+}
+
+main {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    z-index: 10;
+}
+
+
+html, body {
   background-color: #FFF;
   margin: 0;
-  padding-top: 0;
-  
-
-  
+  padding: 0;
 }
+
 canvas {
   display: block;
 }
 
 .wrapper {
-  border: solid 0px black;
+    border: solid 0px purple;
 
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-
 }
 
-.medium {
-  font-family: gotham-medium;
-
-}
-
-.light {
-  font-family: gotham-light;
+#homeScreenNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    border-bottom: 1px solid black;
 }
 
 #title {
   font-family: googleFont-medium;
   font-size: 50pt;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,39 +66,64 @@ canvas {
   margin-top: -10%;
 }
 
-#searchContainer {
-  border: 0px blue solid;
+#homeScreenSearchContainer {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-
   width: 50%;
-
-}
-
-
-#searchInput {
-  width: 100%;
 }
 
 #btnContainer {
-  border: 0px black solid;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* flex-shrink: 0; */
+    /* padding: 10px; */
 }
+
 
 
 #searchBtn, #luckyBtn {
-  /* width: 30%; */
-  align-self: center;;
+    /* width: 30%; */
+    align-self: center;;
+    padding: 5px;
+    margin: 5px;
+  }
 
+#homeScreenInfo {
+  margin: 20px;
+  margin-top: 50px;
+
+  text-align: center;
 }
 
 #imageSearchScreen {
-  display:none;
+  display: none;
 }
 
+/* 
+.resultDiv img {
+  width: 100 !important;
+  height: 200;
+} */
+
+/* Additional CSS for navigation */
+.navOption {
+  padding: 0 8px;
+  text-decoration: none;
+  color: #0000cc;
+}
+
+.selectedNavOption {
+  color: #000;
+  font-family: gotham-medium;
+}
+
+.navOption:hover {
+  text-decoration: underline;
+}
+
+.result-item {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  text-align: left;
+}
